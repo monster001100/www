@@ -290,6 +290,19 @@ def createTree(chooseBestFeatureToSplit, dataset, labels, test_dataset, label_di
 
 
 if __name__ == '__main__':
+    # ===== 在编辑器里直接点"运行"（不带命令行参数）时使用的默认设置，可以改这里 =====
+    DEFAULT_DATASET = 'melon'  # 数据集：melon / celeba
+    DEFAULT_ALGO = '1'         # 算法：'1'=ID3, '2'=C4.5, '3'=CART
+    DEFAULT_PRUNE = 'none'     # 剪枝：'none' / 'pre' / 'post'
+
+    # 切换到本文件所在目录，这样不管从哪里运行都能找到 melon/、celeba/ 数据
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+    if len(sys.argv) < 2:
+        print("未提供命令行参数，使用默认设置：python tree.py %s %s %s"
+              % (DEFAULT_DATASET, DEFAULT_ALGO, DEFAULT_PRUNE))
+        sys.argv = [sys.argv[0], DEFAULT_DATASET, DEFAULT_ALGO, DEFAULT_PRUNE]
+
     dataset_name = sys.argv[1]  # 从命令行参数获取数据集名称
 
     # 构建文件路径
@@ -319,7 +332,8 @@ if __name__ == '__main__':
     print(f'labels = {labels}')
 
     # 根据命令行参数选择使用的决策树算法
-    dec_tree = sys.argv[2]
+    dec_tree = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_ALGO
+    assert dec_tree in ('1', '2', '3'), "算法必须为 1(ID3) / 2(C4.5) / 3(CART)"
     if dec_tree == '1':
         chooseBestFeatureToSplit = ID3_chooseBestFeatureToSplit
         plotter = treePlotter.ID3_Tree  # 使用ID3算法时的可视化函数
