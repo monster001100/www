@@ -1,0 +1,28 @@
+Ent(D): 1.0
+labels = ['纹理', '根蒂', '色泽', '脐部']
+正在使用算法 C4.5
+C4.5中第0个特征的信息增益率为：0.134
+C4.5中第1个特征的信息增益率为：0.084
+C4.5中第2个特征的信息增益率为：0.181
+C4.5中第3个特征的信息增益率为：0.181
+此时最优索引为：脐部
+C4.5中第0个特征的信息增益率为：1.000
+C4.5中第1个特征的信息增益率为：1.000
+C4.5中第2个特征的信息增益率为：0.541
+此时最优索引为：根蒂
+C4.5中第0个特征的信息增益率为：0.000
+C4.5中第1个特征的信息增益率为：0.384
+C4.5中第2个特征的信息增益率为：0.000
+此时最优索引为：根蒂
+C4.5 Decision Tree:
+ {'脐部': {'0': {'根蒂': {'0': '1', '1': '0', '2': '1'}}, '1': '1', '2': '0'}}
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+决策树图片已保存到: results/melon_C45_pre.png
+C4.5 Test Set True Results:
+ ['1', '1', '1', '0', '0', '0', '0']
+C4.5 Test Set Predicted Results:
+ ['1', '1', '1', '1', '0', '0', '0']
+C4.5 Test Set Accuracy:
+ 0.8571428571428571
+SUMMARY dataset=melon algo=C4.5 prune=pre leaves=5 depth=2 train_acc=0.8000 test_acc=0.8571

@@ -1,0 +1,33 @@
+Ent(D): 1.0
+labels = ['纹理', '根蒂', '色泽', '脐部']
+正在使用算法 ID3
+ID3中第0个特征的信息增益为：0.174
+ID3中第1个特征的信息增益为：0.115
+ID3中第2个特征的信息增益为：0.275
+ID3中第3个特征的信息增益为：0.275
+此时最优索引为：脐部
+ID3中第0个特征的信息增益为：0.811
+ID3中第1个特征的信息增益为：0.811
+ID3中第2个特征的信息增益为：0.811
+此时最优索引为：色泽
+ID3中第0个特征的信息增益为：0.000
+ID3中第1个特征的信息增益为：0.311
+ID3中第2个特征的信息增益为：0.000
+此时最优索引为：根蒂
+ID3中第0个特征的信息增益为：0.252
+ID3中第1个特征的信息增益为：0.252
+此时最优索引为：色泽
+ID3中第0个特征的信息增益为：1.000
+此时最优索引为：纹理
+ID3 Decision Tree:
+ {'脐部': {'0': '1', '1': {'根蒂': {'0': '0', '1': {'色泽': {'0': '1', '1': '1', '2': '1'}}, '2': '1'}}, '2': '0'}}
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+决策树图片已保存到: results/melon_ID3_post.png
+ID3 Test Set True Results:
+ ['1', '1', '1', '0', '0', '0', '0']
+ID3 Test Set Predicted Results:
+ ['1', '1', '1', '1', '0', '0', '1']
+ID3 Test Set Accuracy:
+ 0.7142857142857143
+SUMMARY dataset=melon algo=ID3 prune=post leaves=7 depth=3 train_acc=0.8000 test_acc=0.7143

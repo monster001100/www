@@ -1,0 +1,28 @@
+Ent(D): 1.0
+labels = ['纹理', '根蒂', '色泽', '脐部']
+正在使用算法 CART
+CART中第0个特征的基尼指数为：0.400
+CART中第1个特征的基尼指数为：0.440
+CART中第2个特征的基尼指数为：0.350
+CART中第3个特征的基尼指数为：0.350
+此时最优索引为：脐部
+CART中第0个特征的基尼指数为：0.000
+CART中第1个特征的基尼指数为：0.000
+CART中第2个特征的基尼指数为：0.000
+此时最优索引为：色泽
+CART中第0个特征的基尼指数为：0.500
+CART中第1个特征的基尼指数为：0.333
+CART中第2个特征的基尼指数为：0.500
+此时最优索引为：根蒂
+CART Decision Tree:
+ {'脐部': {'0': '1', '1': '1', '2': '0'}}
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+findfont: Failed to find font weight normal for WenQuanYi Zen Hei, now using 500.
+决策树图片已保存到: results/melon_CART_pre.png
+CART Test Set True Results:
+ ['1', '1', '1', '0', '0', '0', '0']
+CART Test Set Predicted Results:
+ ['1', '1', '1', '1', '0', '0', '1']
+CART Test Set Accuracy:
+ 0.7142857142857143
+SUMMARY dataset=melon algo=CART prune=pre leaves=3 depth=1 train_acc=0.7000 test_acc=0.7143
